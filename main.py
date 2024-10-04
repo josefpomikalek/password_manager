@@ -17,6 +17,7 @@ def generate_password():
     shuffle(password_list)
 
     password = "".join(password_list)
+    password_entry.insert(0, password)
 
 
 def save():
@@ -68,7 +69,7 @@ password_entry = Entry(width=32)
 password_entry.grid(row=3, column=1)
 
 #Buttons
-generate_password_button = Button(text="Generate Password")
+generate_password_button = Button(text="Generate Password", command=generate_password)
 generate_password_button.grid(row=3, column=2)
 add_button = Button(text="Add", width=43, command=save)
 add_button.grid(row=4, column=1, columnspan=2)
